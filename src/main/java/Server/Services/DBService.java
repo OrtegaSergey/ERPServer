@@ -4,7 +4,6 @@ import Server.Secondary.Person;
 
 import java.sql.*;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class DBService {
@@ -12,7 +11,7 @@ public class DBService {
     private static Statement stmt;
     private static final String URL = "jdbc:mysql://localhost:3306/wmp?useSSL=false&autoReconnect=true";
     private static final String USERNAME = "root";
-    private static final String PASSWORD = "1a7ye8hn10c4";
+    private static final String PASSWORD = "794613852";
 
     public static void connect() throws SQLException {
         try {
@@ -57,6 +56,7 @@ public class DBService {
 
 
     public static ArrayList<Person> getActiveClients() throws SQLException{
+        System.out.println("Получаю активных клиентов из базы");
         checkConnection();
         ArrayList<Person> al= new ArrayList<Person>();
         String qry = String.format("SELECT * FROM wmp.clients WHERE archived IS NULL AND deleted='0';");

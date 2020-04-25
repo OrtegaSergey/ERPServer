@@ -1,8 +1,11 @@
 package Server.Secondary;
 
+import org.apache.poi.poifs.crypt.dsig.services.TimeStampService;
+
 import java.io.Serializable;
 import java.sql.*;
 //import java.util.Date;
+
 
 public class Person implements Serializable {
 
@@ -120,6 +123,7 @@ public class Person implements Serializable {
         this.createdBy = rs.getString("createdBy");
         this.branch = rs.getInt("branch");
         this.alert = rs.getBoolean("alert");
+        System.out.println("person building completed");
     }
 
 

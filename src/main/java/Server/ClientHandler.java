@@ -122,6 +122,7 @@ public class ClientHandler {
     private void sendMsg(String msg) {
         try {
             out.writeUTF(msg);
+            System.out.println(msg);
             out.flush();
         } catch (IOException e) {
             e.printStackTrace();
